@@ -183,6 +183,11 @@ html {
     visibility: hidden;
 }
 
+.sixdice {
+    margin-bottom: 2rem;
+    width: 5rem;
+    height: 5rem;
+}
 #sixdice {
     /* position: relative; */
     margin-bottom: 2rem;
@@ -470,3 +475,4 @@ button:hover {
         margin: 0rem;
     } */
 }
+
