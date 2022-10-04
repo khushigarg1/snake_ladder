@@ -26,14 +26,20 @@ var dice = ['<img src="images/1dice.png" class="sixdice">', '<img src="images/2d
 
 var p1, p2, p3, p4;
 var nump;       //number of player
-function choose_player() {
-
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
-// -----------------------------DROPDOWDN WILL BE SHOWN ON CLICKING CHOOSE NUMBER OF PLAYERS FROM WHERE WE WILL CHOSSE HOW MANY NUMBER OF PLAYERS WANT TO PLAY---------------------
+var select;
+function choose_player(){
     document.getElementById("nump").style.visibility = 'visible';
-    var select = document.getElementById('nump');
+    select = document.getElementById('nump');
+    console.log(nump);
+}
+function choose() {
+    
+    // var popup = document.getElementById("myPopup");
+    // popup.classList.toggle("show");
+    // -----------------------------DROPDOWDN WILL BE SHOWN ON CLICKING CHOOSE NUMBER OF PLAYERS FROM WHERE WE WILL CHOSSE HOW MANY NUMBER OF PLAYERS WANT TO PLAY---------------------
+    select = document.getElementById('nump');
     nump = select.options[select.selectedIndex].value;
+    console.log(nump);
 
     // -------------------------------------SET MARGIN BETWEEN PLAYERS TAG AND HIDE NUMBER OF PLAYERS WHICH ARE NOT PLAYING---------------
     // console.log(nump);
@@ -81,22 +87,24 @@ function choose_player() {
 
 // ----------------------------WHEN PLAYER CLICK ON START THE CHOSE PLAYERS SO WHAT SHOULD BE HIDDEN OR WHAT SHOULD BE SHOWN ON THE SCREEN-------------------------
 function start() {
-    document.getElementById("choose_player").disabled = true;
+    // document.getElementById("choose_player").disabled = true;
     if (nump == 0) {
         var popup = document.getElementById("myPopup");
         popup.innerHTML = "First Choose number of players!!";
         popup.classList.toggle("show");
     }
     else {
+        document.getElementById("myPopup").style.visibility = 'hidden';
         // ---------------------------------IF TWO PLAYERS COLOUR IS SAME THEN ITS NOT POSSIBLE----------------------
         if (nump == 2) {
             if (document.getElementById('select1').value == document.getElementById('select2').value) {
-
+                document.getElementById("myPopup").style.visibility = 'visible';
                 var popup = document.getElementById("myPopup");
                 popup.innerHTML = "Select two different color !!";
                 popup.classList.toggle("show");
             }
             else {
+                // document.getElementById("myPopup").style.display = 'none';
                 // ---------------------------IT WILL COUNT TOTAL TIME AFTER CLICKING ON PLAY BUTTON------------------------
                 timervar = setInterval(time, 1000);
                 var totalseconds = 0;
@@ -137,7 +145,7 @@ function start() {
         // ---------------------------------IF THREE PLAYER'S COLOUR IS SAME THEN ITS NOT POSSIBLE SO IT WILL GIVE A POPUP MESSAGE----------------------
 
             if (document.getElementById('select1').value == document.getElementById('select2').value || document.getElementById('select1').value == document.getElementById('select3').value || document.getElementById('select3').value == document.getElementById('select2').value) {
-
+                document.getElementById("myPopup").style.visibility = 'visible';
                 var popup = document.getElementById("myPopup");
                 popup.innerHTML = "Please Choose different color !!";
                 popup.classList.toggle("show");
@@ -197,6 +205,7 @@ function start() {
                 document.getElementById('select2').value == document.getElementById('select4').value ||
                 document.getElementById('select3').value == document.getElementById('select4').value) {
 
+                    document.getElementById("myPopup").style.visibility = 'visible';
                 var popup = document.getElementById("myPopup");
                 popup.innerHTML = "Please Choose different color !!";
                 popup.classList.toggle("show");
