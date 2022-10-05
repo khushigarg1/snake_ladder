@@ -140,7 +140,6 @@ function start() {
             }
         }
 
-
         if (nump == 3) {
         // ---------------------------------IF THREE PLAYER'S COLOUR IS SAME THEN ITS NOT POSSIBLE SO IT WILL GIVE A POPUP MESSAGE----------------------
 
@@ -194,7 +193,6 @@ function start() {
                 document.getElementById("play").removeAttribute('onclick');                 
             }
         }
-
 
         if (nump == 4) {
            // ---------------------------------IF ANY TWO POAYERS OF FOUR PLAYER'S COLOUR IS SAME THEN ITS NOT POSSIBLE SO IT WILL GIVE A POPUP MESSAGE----------------------
